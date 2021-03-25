@@ -1,0 +1,46 @@
+{
+  "name": "pierre-icons",
+  "version": "1.0.29",
+  "description": "Package that contains all Pierre icons",
+  "main": "index.js",
+  "scripts": {
+    "dist": "babel --config-file ./babel.dist.config.js src --ignore src/components/__tests__ --out-dir dist",
+    "precommit": "node ./preCommit.js"
+  },
+  "typings": "./index.d.ts",
+  "homepage": "https://github.com/DanijelBojcic/pierre-icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanijelBojcic/pierre-icons.git"
+  },
+  "contributors": [
+    "Danijel Bojcic <danijel@studiopresent.com>"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "~16",
+    "react-native": "> 0.57",
+    "react-native-vector-icons": "github:DanijelBojcic/react-native-vector-icons"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/runtime": "^7.7.6",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^24.9.0",
+    "husky": "4",
+    "jest": "^24.9.0",
+    "react": "16.9.0",
+    "react-native": "^0.61.5"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit && npm --no-git-tag-version version patch && git add ."
+    }
+  }
+}
